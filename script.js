@@ -20,9 +20,9 @@ function saveCart() {
 
 // --- DATA BARANG AWAL ---
 let items = loadItems() || [
-    { id: 1, kategori: "Tukang Somay", nama: "Tepung Sagu 1kg", harga: 10000 },
-    { id: 2, kategori: "Rokok", nama: "Sampoerna Mild", harga: 25000 },
-    { id: 3, kategori: "Minuman", nama: "Aqua 600ml", harga: 4000 },
+    { id: 1, kategori: "Tukang Somay", nama: "Tepung Sagu 1kg", harga: 8000 },
+    { id: 2, kategori: "Tukang somay", nama: "Tepung sagu 1/2kg", harga: 4000 },
+    { id: 3, kategori: "Minuman", nama: "Tepung sagu 1/4kg", harga: 2000 },
     { id: 4, kategori: "Obat", nama: "Minyak Kayu Putih", harga: 8000 },
     { id: 5, kategori: "Tukang Somay", nama: "Daun Bawang", harga: 5000 },
     { id: 6, kategori: "Minuman", nama: "Teh Kotak", harga: 3500 }
