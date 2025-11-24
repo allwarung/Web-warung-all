@@ -1,0 +1,330 @@
+/* Gaya CSS Final: Termasuk Responsivitas untuk Mobile (Android) dan Desktop (PC/Laptop) */
+:root {
+    --primary-color: #64b5f6; /* Biru Muda */
+    --secondary-color: #e3f2fd; /* Biru Sangat Muda */
+    --text-color: #333;
+    --border-color: #ccc;
+    --success-color: #4caf50; /* Hijau */
+    --danger-color: #f44336; /* Merah */
+    --warning-color: #ff9800; /* Oranye */
+    --font-size-base: 16px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    flex-wrap: wrap; /* Penting untuk mobile */
+}
+
+.navbar button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    white-space: nowrap; 
+}
+
+.navbar button:hover, .navbar button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Search Bar Style --- */
+.search-container {
+    flex-grow: 1; 
+    max-width: 300px; /* Batasan lebar di desktop */
+    margin-left: 10px;
+}
+
+#search-input {
+    padding: 8px 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 100%; 
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+}
+
+/* --- Main Layout --- */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Product Display --- */
+.main-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card h4 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    background-color: var(--success-color); 
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.add-to-cart-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* --- Shopping Cart (Sidebar) --- */
+.sidebar {
+    flex: 1;
+}
+
+.shopping-cart {
+    position: sticky;
+    top: 20px; 
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.cart-item-controls button {
+    background-color: var(--primary-color);
+}
+
+.cart-item-controls .remove-btn {
+    background-color: var(--danger-color); 
+}
+
+.buy-btn {
+    background-color: var(--warning-color); 
+}
+
+/* --- Admin Panel --- */
+#admin-panel {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Gaya Umum untuk Form Admin */
+#admin-panel label, #admin-panel input, #admin-panel select, #admin-panel button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#admin-panel input[type="text"], #admin-panel input[type="number"], #admin-panel select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+#admin-panel button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* --- Edit Item List (Edit Nama/Harga/Hapus) --- */
+.edit-item-row {
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.edit-item-info {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.edit-item-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-item-controls input {
+    /* Atur input agar lebih ringkas di desktop */
+    width: 150px; 
+    padding: 8px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.edit-item-controls .btn-edit-name,
+.edit-item-controls .btn-edit-price {
+    width: auto;
+    padding: 8px 15px;
+    background-color: var(--success-color);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.edit-item-controls .btn-delete {
+    width: auto;
+    padding: 8px 15px;
+    background-color: var(--danger-color);
+    margin-left: auto; /* Dorong tombol hapus ke kanan di desktop */
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none !important;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* ============================================== */
+/* RESPONSIVENESS (MOBILE/ANDROID)       */
+/* ============================================== */
+@media (max-width: 768px) {
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .navbar button {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .container {
+        flex-direction: column; /* Keranjang dan Produk akan menumpuk */
+        padding: 0 10px;
+    }
+
+    .main-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+        order: 2; /* Produk di bawah keranjang */
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 1; /* Keranjang di atas produk */
+    }
+
+    .shopping-cart {
+        position: static; /* Hilangkan sticky di mobile */
+    }
+    
+    /* Aturan untuk tampilan Edit Item di Mobile */
+    .edit-item-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .edit-item-controls input,
+    .edit-item-controls button {
+        width: 100%; /* Buat input dan tombol full width */
+        margin: 0 !important;
+    }
+
+    .edit-item-controls .btn-delete {
+        margin-left: 0; /* Pastikan tombol Hapus tidak didorong */
+        background-color: var(--danger-color);
+    }
+}
